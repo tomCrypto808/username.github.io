@@ -11,30 +11,10 @@
       background: #f9fafb;
       color: #333;
     }
-    h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      margin-bottom: 1.5rem;
-    }
-    #chatra-wrapper {
-      width: 400px;
-      height: 520px;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
   </style>
 
-  <!-- OPTIONAL: embed Chatra directly inside the DIV below -->
+  <!-- (Optional) Prefill testing info; safe to remove -->
   <script>
-    window.ChatraSetup = {
-      mode: 'frame',
-      injectTo: 'chatra-wrapper'
-    };
-    // Prefill test visitor info (optional)
     window.ChatraIntegration = {
       name: "Thomas (Test)",
       email: "thomas@example.com",
@@ -42,15 +22,13 @@
     };
   </script>
 
-  <!-- Chatra Widget -->
+  <!-- Chatra widget (floating bottom-right) -->
   <!-- Chatra {literal} -->
   <script>
     (function(d, w, c) {
-        w.ChatraID = '3fE9gceWpdMDzykP4';   // your Chatra ID
+        w.ChatraID = '3fE9gceWpdMDzykP4'; // your Chatra ID
         var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
+        w[c] = w[c] || function() { (w[c].q = w[c].q || []).push(arguments); };
         s.async = true;
         s.src = 'https://call.chatra.io/chatra.js';
         if (d.head) d.head.appendChild(s);
@@ -59,8 +37,7 @@
   <!-- /Chatra {/literal} -->
 </head>
 <body>
-  <h1>Chatra + AI Test Page</h1>
-  <p>Type a message in the chat panel below to test the AI responder.</p>
-  <div id="chatra-wrapper"></div>
+  <h1>Chatra + AI Test</h1>
+  <p>Open the chat bubble at the bottom-right and send a message to test your AI loop.</p>
 </body>
 </html>
