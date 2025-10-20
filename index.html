@@ -1,93 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UpTrade — Support</title>
-  <meta name="description" content="Lightweight landing page with Chatra live chat embedded." />
-  <link rel="preconnect" href="https://call.chatra.io" crossorigin>
-  <style>
-    :root {
-      --bg: #0b0f14;
-      --card: #111722;
-      --muted: #8aa1b1;
-      --text: #e9f0f6;
-      --brand: #47a8ff;
-    }
-    html, body { height: 100%; }
-    body {
-      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 10% 10%, #111827, #0b0f14 60%);
-      color: var(--text); display: grid; place-items: center; padding: 24px;
-    }
-    .shell { max-width: 960px; width: 100%; }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      padding: 32px; backdrop-filter: blur(8px);
-    }
-    h1 { font-size: clamp(28px, 3vw, 40px); margin: 0 0 8px; letter-spacing: 0.3px; }
-    p.lead { color: var(--muted); margin-top: 0; }
-    .cta { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
-    .btn { cursor: pointer; border: 1px solid rgba(255,255,255,0.1); color: var(--text); background: #0f1520; padding: 12px 16px; border-radius: 12px; text-decoration: none; }
-    .btn.primary { background: var(--brand); color: #08131d; border-color: transparent; font-weight: 600; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 28px; }
-    .feature { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; }
-    .muted { color: var(--muted); font-size: 14px; }
-    footer { text-align: center; margin-top: 22px; color: var(--muted); font-size: 12px; }
-    code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px; }
-  </style>
+<meta charset="utf-8" />
+<title>Chatra + AI Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+body {
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+margin: 2rem;
+background: #f9fafb;
+color: #333;
+}
+</style>
+
+<!-- (Optional) Prefill testing info; safe to remove -->
+<script>
+window.ChatraIntegration = {
+name: "Thomas (Test)",
+email: "thomas@example.com",
+notes: "QA run for AI bot"
+};
+</script>
+
+<!-- Chatra widget (floating bottom-right) -->
+<!-- Chatra {literal} -->
+<script>
+(function(d, w, c) {
+        w.ChatraID = 'shzzuYpnhhQczi5rs'; // your Chatra ID
+var s = d.createElement('script');
+w[c] = w[c] || function() { (w[c].q = w[c].q || []).push(arguments); };
+s.async = true;
+s.src = 'https://call.chatra.io/chatra.js';
+if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
 </head>
 <body>
-  <main class="shell">
-    <section class="card">
-      <h1>How can we help?</h1>
-      <p class="lead">This lightweight site is running on GitHub Pages with <strong>Chatra</strong> live chat enabled. Click the chat bubble in the corner to talk to us.</p>
-      <div class="cta">
-        <a class="btn primary" href="#" onclick="window.Chatra && Chatra('openChat', true)">Open Chat</a>
-        <a class="btn" href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-
-      <div class="grid">
-        <div class="feature">
-          <h3>Real‑time chat</h3>
-          <p class="muted">Chatra widget loads from <code>call.chatra.io</code>. If you add a strict Content Security Policy later, be sure to allow that origin.</p>
-        </div>
-        <div class="feature">
-          <h3>Fast deploy</h3>
-          <p class="muted">Commit this file as <code>index.html</code> in your Pages repo (e.g. <em>username.github.io</em>) and your site is live.</p>
-        </div>
-        <div class="feature">
-          <h3>Customizable</h3>
-          <p class="muted">Drop in your brand, colors, and analytics. The chat snippet is already wired with your ID.</p>
-        </div>
-      </div>
-
-      <footer>
-        © <span id="year"></span> Your Company · GitHub Pages · Chatra enabled
-      </footer>
-    </section>
-  </main>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- Chatra {literal} -->
-  <script>
-    (function(d, w, c) {
-      w.ChatraID = 'shzzuYpnhhQczi5rs';
-      var s = d.createElement('script');
-      w[c] = w[c] || function() { (w[c].q = w[c].q || []).push(arguments); };
-      s.async = true; s.src = 'https://call.chatra.io/chatra.js';
-      if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-  </script>
-  <!-- /Chatra {/literal} -->
-
-  <noscript>
-    <div style="position:fixed;bottom:16px;right:16px;background:#111722;border:1px solid rgba(255,255,255,0.1);padding:10px 12px;border-radius:10px;color:#e9f0f6;">Enable JavaScript to use our live chat.</div>
-  </noscript>
+<h1>Chatra + AI Test</h1>
+<p>Open the chat bubble at the bottom-right and send a message to test your AI loop.</p>
 </body>
 </html>
