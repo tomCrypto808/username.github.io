@@ -5,32 +5,26 @@
   <title>Chatra + AI Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      margin: 2rem;
-      background: #f9fafb;
-      color: #333;
-    }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 2rem; background: #f9fafb; color:#333; }
   </style>
-
-
-<!-- Chatra {literal} -->
-<script>
-    (function(d, w, c) {
-        w.ChatraID = 'shzzuYpnhhQczi5rs';
-        var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-</script>
-<!-- /Chatra {/literal} -->
 </head>
 <body>
   <h1>Chatra + AI Test</h1>
-  <p>Open the chat bubble at the bottom-right and send a message to test your AI loop.</p>
+  <p>Open the chat bubble at bottom-right and send a message.</p>
+
+  <!-- Chatra -->
+  <script>
+    window.ChatraID = 'shzzuYpnhhQczi5rs'; // make sure this matches Chatra dashboard exactly
+    (function(d, w, c) {
+      var s = d.createElement('script');
+      w[c] = w[c] || function(){ (w[c].q = w[c].q || []).push(arguments); };
+      s.async = true; s.src = 'https://call.chatra.io/chatra.js';
+      d.head.appendChild(s);
+    })(document, window, 'Chatra');
+
+    Chatra('on', 'ready', function(){ console.log('[Chatra] ready'); });
+    Chatra('on', 'error', function(e){ console.log('[Chatra] error', e); });
+  </script>
+  <!-- /Chatra -->
 </body>
 </html>
