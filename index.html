@@ -13,28 +13,21 @@
     }
   </style>
 
-  <!-- (Optional) Prefill testing info; safe to remove -->
-  <script>
-    window.ChatraIntegration = {
-      name: "Thomas (Test)",
-      email: "thomas@example.com",
-      notes: "QA run for AI bot"
-    };
-  </script>
 
-  <!-- Chatra widget (floating bottom-right) -->
-  <!-- Chatra {literal} -->
-  <script>
+<!-- Chatra {literal} -->
+<script>
     (function(d, w, c) {
-        w.ChatraID = 'shzzuYpnhhQczi5rs'; // your Chatra ID
+        w.ChatraID = 'shzzuYpnhhQczi5rs';
         var s = d.createElement('script');
-        w[c] = w[c] || function() { (w[c].q = w[c].q || []).push(arguments); };
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
         s.async = true;
         s.src = 'https://call.chatra.io/chatra.js';
         if (d.head) d.head.appendChild(s);
     })(document, window, 'Chatra');
-  </script>
-  <!-- /Chatra {/literal} -->
+</script>
+<!-- /Chatra {/literal} -->
 </head>
 <body>
   <h1>Chatra + AI Test</h1>
