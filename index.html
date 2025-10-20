@@ -5,15 +5,18 @@
   <title>Chatra + GitHub Pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- CSP tuned for Chatra on GitHub Pages -->
+  <!-- CSP tuned for Chatra (meta form for GitHub Pages) -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self' https://call.chatra.io https://static.chatra.io 'unsafe-inline' 'unsafe-eval';
     connect-src 'self' https://call.chatra.io https://static.chatra.io https://*.chatra.io;
     img-src 'self' data: https://static.chatra.io https://*.chatra.io;
     style-src 'self' 'unsafe-inline';
+    font-src 'self' data: https://static.chatra.io https://*.chatra.io;
+    frame-src https://chat.chatra.io https://*.chatra.io;
+    child-src https://chat.chatra.io https://*.chatra.io; /* legacy fallback */
     base-uri 'self';
-    frame-ancestors 'self';
+    /* frame-ancestors cannot be set via <meta>; only via HTTP header */
   ">
 
   <style>
@@ -26,15 +29,15 @@
 <body>
   <h1>Chatra + GitHub Pages</h1>
   <p>Origin: <code id="origin"></code></p>
-  <p>If the bubble doesn’t appear, open in <b>Incognito with extensions off</b> and check Chatra “Allowed domains”.</p>
+  <p>If the bubble doesn’t appear, open in <b>Incognito</b> (extensions off) and check Chatra “Allowed domains”.</p>
 
   <script>
     document.getElementById('origin').textContent = location.origin;
   </script>
 
-  <!-- Chatra install: keep simple, no event handlers -->
+  <!-- Chatra install -->
   <script>
-    window.ChatraID = 'shzzuYpnhhQczi5rs'; // copy from Chatra → Settings → Install code
+    window.ChatraID = 'YOUR_CHATRA_ID';
     (function(d, w, c) {
       var s = d.createElement('script');
       w[c] = w[c] || function(){ (w[c].q = w[c].q || []).push(arguments); };
