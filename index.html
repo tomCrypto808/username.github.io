@@ -1,50 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Chatra + GitHub Pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<title>Chatra + AI Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+body {
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+margin: 2rem;
+background: #f9fafb;
+color: #333;
+}
+</style>
 
-  <!-- CSP tuned for Chatra (meta form for GitHub Pages) -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' https://call.chatra.io https://static.chatra.io 'unsafe-inline' 'unsafe-eval';
-    connect-src 'self' https://call.chatra.io https://static.chatra.io https://*.chatra.io;
-    img-src 'self' data: https://static.chatra.io https://*.chatra.io;
-    style-src 'self' 'unsafe-inline';
-    font-src 'self' data: https://static.chatra.io https://*.chatra.io;
-    frame-src https://chat.chatra.io https://*.chatra.io;
-    child-src https://chat.chatra.io https://*.chatra.io; /* legacy fallback */
-    base-uri 'self';
-    /* frame-ancestors cannot be set via <meta>; only via HTTP header */
-  ">
+<!-- (Optional) Prefill testing info; safe to remove -->
+<script>
+window.ChatraIntegration = {
+name: "Thomas (Test)",
+email: "thomas@example.com",
+notes: "QA run for AI bot"
+};
+</script>
 
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-           margin: 2rem; background: #f9fafb; color: #111827; }
-    h1 { margin: 0 0 .5rem; font-size: 1.25rem; }
-    code { background:#eef2ff; padding:.15rem .35rem; border-radius:.35rem }
-  </style>
+<!-- Chatra widget (floating bottom-right) -->
+<!-- Chatra {literal} -->
+<script>
+(function(d, w, c) {
+        w.ChatraID = 'shzzuYpnhhQczi5rs'; // your Chatra ID
+var s = d.createElement('script');
+w[c] = w[c] || function() { (w[c].q = w[c].q || []).push(arguments); };
+s.async = true;
+s.src = 'https://call.chatra.io/chatra.js';
+if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
 </head>
 <body>
-  <h1>Chatra + GitHub Pages</h1>
-  <p>Origin: <code id="origin"></code></p>
-  <p>If the bubble doesn’t appear, open in <b>Incognito</b> (extensions off) and check Chatra “Allowed domains”.</p>
-
-  <script>
-    document.getElementById('origin').textContent = location.origin;
-  </script>
-
-  <!-- Chatra install -->
-  <script>
-    window.ChatraID = 'shzzuYpnhhQczi5rs';
-    (function(d, w, c) {
-      var s = d.createElement('script');
-      w[c] = w[c] || function(){ (w[c].q = w[c].q || []).push(arguments); };
-      s.async = true; s.src = 'https://call.chatra.io/chatra.js';
-      d.head.appendChild(s);
-      console.log('[Chatra] loader injected');
-    })(document, window, 'Chatra');
-  </script>
+<h1>Chatra + AI Test</h1>
+<p>Open the chat bubble at the bottom-right and send a message to test your AI loop.</p>
 </body>
 </html>
